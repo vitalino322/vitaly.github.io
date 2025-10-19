@@ -1,52 +1,87 @@
-<html>
-	<head>
-		<title>THE GATHER NYC</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
   <title>About Us — The Gather NYC</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!-- Подключаем те же стили, что на главной -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
-<body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="about.html">About Us</a>
+<body class="is-preload">
+
+  <!-- Wrapper (та же обёртка, что и в index.html) -->
+  <div id="wrapper">
+
+    <!-- Header / Nav (можно скопировать из index.html, чтобы меню совпадало) -->
+    <header id="header">
+      <a href="index.html" class="logo">The Gather NYC</a>
+    </header>
+
+    <nav id="nav">
+      <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="about.html">About Us</a></li>
+      </ul>
+      <ul class="icons">
+        <!-- Примеры иконок; поставь свои ссылки -->
+        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="mailto:hello@thegathernyc.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+      </ul>
     </nav>
-  </header>
 
-  <main>
-    <h1>About Us</h1>
-    <p>We are an NYC-based event company creating immersive experiences — from private gatherings to large-scale corporate events. Our team blends art, music, and atmosphere to make every occasion unforgettable.</p>
+    <!-- Main -->
+    <div id="main">
 
-    <h2>Our Philosophy</h2>
-    <p>We believe events are more than logistics — they’re stories. We help brands and individuals tell theirs through ambiance, design, and people.</p>
-  </main>
+      <section class="post">
+        <header class="major">
+          <h1>About Us</h1>
+          <p>NYC-based event collective. From private rooftops to brand activations — we design nights people remember.</p>
+        </header>
 
-  <footer>
-    <p>© 2025 The Gather NYC</p>
-  </footer>
+        <h2>Our Philosophy</h2>
+        <p>Atmosphere first. Light, sound, pacing, texture — детали собирают эмоцию. Мы управляем ими, чтобы вечер ощущался естественным.</p>
+
+        <h2>Moments We’ve Created</h2>
+        <div class="image-grid">
+          <span class="image fit"><img src="images/event1.jpg" alt="Rooftop dinner" /></span>
+          <span class="image fit"><img src="images/event2.jpg" alt="Private concert" /></span>
+          <span class="image fit"><img src="images/event3.jpg" alt="Brand launch" /></span>
+          <span class="image fit"><img src="images/event4.jpg" alt="Art show" /></span>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Footer (можно оставить как в index.html) -->
+    <footer id="footer">
+      <section class="split contact">
+        <section>
+          <h3>Email</h3>
+          <p><a href="mailto:hello@thegathernyc.com">hello@thegathernyc.com</a></p>
+        </section>
+        <section>
+          <h3>Instagram</h3>
+          <p><a href="#">@thegathernyc</a></p>
+        </section>
+      </section>
+    </footer>
+
+    <!-- Copyright -->
+    <div id="copyright">
+      <ul><li>© 2025 The Gather NYC</li><li>Theme: HTML5 UP</li></ul>
+    </div>
+
+  </div>
+
+  <!-- Скрипты темы (как на главной) -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
-
-     	<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; Untitled.</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</footer>
-
-			<!-- Scripts -->
-			<script src="assets/js/main.js"></script>
