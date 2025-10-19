@@ -253,13 +253,41 @@
       </section>
     </div>
 
-    <!-- Footer -->
-    <footer id="footer">
-      <div id="copyright">
-        <ul><li>© 2025 The Gather NYC</li><li>Theme: HTML5 UP</li></ul>
-      </div>
-    </footer>
-  </div>
+<footer id="footer" class="minimal-footer">
+  <ul>
+    <li>© 2025 The Gather NYC</li>
+    <li>Theme: HTML5 UP</li>
+  </ul>
+</footer>
+
+<style>
+  .minimal-footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background: transparent;
+    font-size: 0.85rem;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+
+  .minimal-footer:hover {
+    opacity: 0.85;
+  }
+
+  .minimal-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    gap: 1.2rem;
+    color: #ccc;
+  }
+
+  .minimal-footer li {
+    white-space: nowrap;
+  }
+</style>
+
 
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/browser.min.js"></script>
