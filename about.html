@@ -4,30 +4,63 @@
   <meta charset="utf-8" />
   <title>About Us — The Gather NYC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!-- базовые стили темы -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+  <!-- локальная полировка под лаконичный вид -->
   <style>
     body { background: linear-gradient(180deg,#141414 0%,#1a1a1a 100%); color:#f5f5f5; }
+    h1,h2,h3 { margin-top:0 }
+    .accent { color:#fff2b2; }
+
+    /* сетка страницы */
     .wrap { display:grid; gap:2rem; grid-template-columns: minmax(0,2fr) minmax(320px,1fr); align-items:start; }
+    @media (max-width: 980px){ .wrap { grid-template-columns:1fr; } }
+
+    /* карточки */
     .card {
       background: rgba(18,18,18,.95);
       border: 1px solid rgba(255,255,255,.08);
       border-radius:.6rem; padding:1.5rem;
       box-shadow:0 0 20px rgba(0,0,0,.35);
     }
-    .card--side { background: rgba(28,28,28,.8); border:1px solid rgba(255,255,255,.06); }
-    h1,h2,h3 { margin-top:0 }
-    .accent { color:#fff2b2 }
+    .card--side { background: rgba(28,28,28,.85); border:1px solid rgba(255,255,255,.06); }
+
+    /* двухколоночные блоки */
     .grid-2 { display:grid; gap:1rem; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 980px){ .grid-2 { grid-template-columns:1fr; } }
+
+    /* галерея */
     .image-grid { display:grid; gap:1rem; grid-template-columns: repeat(3,1fr); }
-    .image-grid .image img { height:220px; object-fit:cover; border-radius:.4rem; }
+    .image-grid .image img { height:220px; object-fit:cover; border-radius:.4rem; width:100%; display:block; }
+    @media (max-width: 980px){ .image-grid { grid-template-columns:1fr; } .image-grid .image img { height:240px; } }
+
+    /* цифры/статы */
     .stat { display:flex; align-items:baseline; gap:.5rem; }
     .stat b { font-size:1.6rem; color:#fff2b2 }
-    .list-dots li { color:#bcbcbc }
-    @media (max-width: 980px){
-      .wrap { grid-template-columns:1fr; }
-      .image-grid { grid-template-columns:1fr; }
+    .muted { color:#bcbcbc }
+
+    /* кнопка CTA в духе акцента */
+    .button.primary { background:#e4b84d; color:#1a1a1a; border:none; font-weight:600; }
+    .button.primary:hover { background:#f0d47c; }
+
+    /* анимированный футер */
+    #footer.fade-footer {
+      text-align:center; padding:2rem 0;
+      border-top:1px solid rgba(255,255,255,0.1);
+      background:rgba(0,0,0,0.45);
+      opacity:0; transform:translateY(15px);
+      animation: fadeUp 1.2s ease forwards;
     }
+    @keyframes fadeUp { from {opacity:0; transform:translateY(15px);} to {opacity:1; transform:translateY(0);} }
+    #footer p { color:#bcbcbc; font-size:.9rem; margin:0; line-height:1.6; }
+    #footer .brand { color:#fff2b2; font-weight:600; position:relative; }
+    #footer .brand::after {
+      content:""; position:absolute; left:0; bottom:-2px; width:0; height:1px; background:#e4b84d; transition:width .4s ease;
+    }
+    #footer .brand:hover::after { width:100%; }
+    #footer .theme { opacity:.7; }
   </style>
 </head>
 <body class="is-preload">
@@ -45,6 +78,11 @@
         <li class="active"><a href="about.html">About Us</a></li>
         <li><a href="contacts.html">Contacts</a></li>
       </ul>
+      <ul class="icons">
+        <!-- замените # на реальные ссылки -->
+        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="mailto:hello@thegathernyc.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+      </ul>
     </nav>
 
     <!-- Main -->
@@ -52,34 +90,34 @@
       <section class="post">
         <header class="major">
           <h1 class="accent">About Us</h1>
-          <p style="color:#bdbdbd;">Мы создаём атмосферные события в Нью-Йорке: от камерных ужинов на руфах до смелых бренд-активаций. Атмосфера — сначала. Детали — всегда.</p>
+          <p class="muted">We craft immersive events across New York — from intimate rooftop dinners to bold brand activations. Atmosphere first. Details always.</p>
         </header>
 
         <div class="wrap">
 
-          <!-- Основной контент -->
+          <!-- Main card -->
           <div class="card">
             <div class="grid-2" style="margin-bottom:1rem;">
               <div>
-                <h2>Наш подход</h2>
-                <p>Событие — это история. Мы собираем её из света, звука, ритма, текстур и людей. Двигаемся от цели к эмоции: сначала смыслы и сценарий, затем продакшн и исполнение.</p>
-                <ul class="list-dots">
-                  <li>Концепция → сценарий → визуальный язык</li>
-                  <li>Full-stack продакшн: свет, звук, декор, кейтеринг, бар</li>
-                  <li>Релевантные площадки: руфы, лофты, галереи</li>
-                  <li>Кураторство таланта: DJ, live-музыка, перформансы</li>
+                <h2>Our Approach</h2>
+                <p>Every event is a story. We build it through light, sound, rhythm, texture, and people. We move from purpose to emotion: concept first, production next, precision all the way.</p>
+                <ul class="muted">
+                  <li>Concept → storyline → visual language</li>
+                  <li>Full-stack production: lighting, sound, décor, catering, bar</li>
+                  <li>Curated venues: rooftops, lofts, galleries</li>
+                  <li>Talent direction: DJs, live music, performance art</li>
                 </ul>
               </div>
               <div>
-                <h2>Почему мы</h2>
-                <div class="stat"><b>150+</b><span>мероприятий в NYC</span></div>
-                <div class="stat"><b>92%</b><span>клиентов возвращаются</span></div>
-                <div class="stat"><b>24h</b><span>первый продакшн-план</span></div>
-                <p style="color:#bcbcbc;">Мы держим баланс между эстетикой и операционной дисциплиной. Чёткие тайминги, прозрачный бюджет, спокойный бэк-офис.</p>
+                <h2>Why Us</h2>
+                <div class="stat"><b>150+</b><span class="muted">events produced in NYC</span></div>
+                <div class="stat"><b>92%</b><span class="muted">returning clients</span></div>
+                <div class="stat"><b>24h</b><span class="muted">to deliver your first production plan</span></div>
+                <p class="muted">We balance aesthetic sensitivity with operational discipline. Clear timelines, transparent budgets, and calm backstage execution.</p>
               </div>
             </div>
 
-            <h2>Moments we’ve created</h2>
+            <h2>Moments We’ve Created</h2>
             <div class="image-grid">
               <span class="image fit"><img src="images/about-1.jpg" alt="Rooftop dinner"></span>
               <span class="image fit"><img src="images/about-2.jpg" alt="Brand launch"></span>
@@ -91,23 +129,23 @@
             </ul>
           </div>
 
-          <!-- Боковая колонка -->
+          <!-- Sidebar -->
           <aside class="card card--side">
-            <h3 class="accent">Команда</h3>
-            <p style="color:#bcbcbc;">Продюсеры, технический руководитель, арт-директор, кураторы музыки и визуалов, координаторы площадок.</p>
+            <h3 class="accent">Team</h3>
+            <p class="muted">Producers, technical leads, art directors, music curators, visual designers, and venue coordinators — working together to create experiences that feel effortless.</p>
 
-            <h3 class="accent">Фокус</h3>
-            <ul class="list-dots">
-              <li>Private dinners & rooftops (20–60)</li>
-              <li>Brand activations & launches (50–300)</li>
-              <li>Art shows / pop-ups / galleries</li>
+            <h3 class="accent">Focus</h3>
+            <ul class="muted">
+              <li>Private dinners & rooftops (20–60 guests)</li>
+              <li>Brand activations & product launches (50–300 guests)</li>
+              <li>Art shows, pop-ups, and cultural collaborations</li>
             </ul>
 
-            <h3 class="accent">География</h3>
-            <p style="color:#bcbcbc;">NYC, Brooklyn, LIC, Jersey City. Возможны выездные проекты.</p>
+            <h3 class="accent">Coverage</h3>
+            <p class="muted">New York City, Brooklyn, Long Island City, Jersey City — with options for destination projects.</p>
 
             <div class="image fit" style="margin-top:1rem;">
-              <img src="images/about-side.jpg" alt="Team / backstage" style="border-radius:.4rem; object-fit:cover; height:220px;">
+              <img src="images/about-side.jpg" alt="Team / backstage" style="border-radius:.4rem; object-fit:cover; height:220px; width:100%; display:block;">
             </div>
           </aside>
 
@@ -115,15 +153,17 @@
       </section>
     </div>
 
-    <!-- Footer -->
-    <footer id="footer">
-      <div id="copyright">
-        <ul><li>© 2025 The Gather NYC</li><li>Theme: HTML5 UP</li></ul>
-      </div>
+    <!-- Footer (animated) -->
+    <footer id="footer" class="fade-footer">
+      <p>
+        © <span class="brand">2025 The Gather NYC</span> — Crafted with clarity & intention.<br>
+        <span class="theme">Theme: HTML5 UP</span>
+      </p>
     </footer>
 
   </div>
 
+  <!-- скрипты темы -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/browser.min.js"></script>
   <script src="assets/js/breakpoints.min.js"></script>
@@ -131,3 +171,4 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
