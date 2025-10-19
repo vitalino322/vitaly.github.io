@@ -9,6 +9,14 @@
 
   <style>
     /* ---------- Base tweaks ---------- */
+    .hero-badges{display:flex;gap:.5rem;justify-content:center;margin-bottom:.6rem;flex-wrap:wrap}
+.hero-badges span{font-size:.8rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  padding:.2rem .5rem;border-radius:999px;color:#ddd}
+.hero-metrics{display:flex;gap:1.5rem;justify-content:center;margin-top:1rem;opacity:.95}
+.hero-metrics div{text-align:center}
+.hero-metrics b{color:#fff2b2;font-size:1.4rem;display:block;line-height:1}
+.hero-metrics span{color:#bdbdbd;font-size:.85rem}
+
     body {
       background: linear-gradient(180deg, #141414 0%, #1a1a1a 100%);
       color: #f5f5f5;
@@ -127,16 +135,25 @@
   </ul>
 </nav>
 
-    <!-- Hero -->
-    <div class="hero">
-      <div class="hero-inner">
-        <h1>Creating Memories</h1>
-        <p>Immersive events across New York — from intimate dinners to bold brand activations. Atmosphere first. Details always.</p>
-        <ul class="actions special">
-          <li><a href="contacts.html" class="button primary">Plan Your Event</a></li>
-        </ul>
-      </div>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badges">
+      <span>NYC</span><span>Rooftops</span><span>Lofts</span><span>Galleries</span>
     </div>
+    <h1>Creating Memories</h1>
+    <p>Immersive events across New York — from intimate dinners to bold brand activations.</p>
+    <ul class="actions special">
+      <li><a href="contacts.html" class="button primary">Plan Your Event</a></li>
+      <li><a href="about.html" class="button">See How We Work</a></li>
+    </ul>
+    <div class="hero-metrics">
+      <div><b>150+</b><span>events</span></div>
+      <div><b>92%</b><span>returning clients</span></div>
+      <div><b>24h</b><span>first plan</span></div>
+    </div>
+  </div>
+</div>
+
 
     <!-- Main -->
     <div id="main">
@@ -232,6 +249,7 @@
   </script>
 </body>
 </html>
+
 
 
 
