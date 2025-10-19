@@ -10,6 +10,47 @@
   <style>
     body { background:linear-gradient(180deg,#141414 0%,#1a1a1a 100%); color:#f5f5f5; margin:0; }
 
+    .form-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.send-btn,
+.email-btn {
+  flex: 1 1 48%;
+  text-align: center;
+  padding: 0.9rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.send-btn {
+  background: rgba(228,184,77,0.3);
+  color: #fff2b2;
+  border: 1px solid rgba(228,184,77,0.7);
+  cursor: pointer;
+}
+.send-btn:hover {
+  background: rgba(228,184,77,0.5);
+}
+
+.email-btn {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  text-decoration: none;
+  display: inline-block;
+}
+.email-btn:hover {
+  background: rgba(255,255,255,0.25);
+  color: #fff2b2;
+}
+
+
     /* Header / Nav */
     #header { text-align:center; }
     #header .logo { font-weight:600; }
@@ -117,48 +158,41 @@
           <h1 class="accent">Tell us about your event</h1>
           <p style="color:#bdbdbd;margin-top:-.4rem">Date, format, guests, budget — we’ll reply within 24 hours.</p>
 
-          <form action="https://formspree.io/f/xwprzvla" method="POST">
-            <div class="fields">
+         <form action="https://formspree.io/f/xwprzvla" method="POST">
+  <label>Name*</label>
+  <input type="text" name="name" placeholder="Full name" required>
 
-              <div class="field">
-                <label for="name">Name*</label>
-                <input type="text" id="name" name="name" required>
-              </div>
+  <label>Email*</label>
+  <input type="email" name="email" placeholder="email@example.com" required>
 
-              <div class="field">
-                <label for="email">Email*</label>
-                <input type="email" id="email" name="email" required>
-              </div>
+  <label>Phone</label>
+  <input type="text" name="phone" placeholder="+1 ..." />
 
-              <div class="field">
-                <label for="phone">Phone</label>
-                <input type="text" id="phone" name="phone" placeholder="+1 ...">
-              </div>
+  <label>Date</label>
+  <input type="date" name="date" />
 
-              <div class="field">
-                <label for="date">Date</label>
-                <input type="date" id="date" name="date">
-              </div>
+  <label>Guests</label>
+  <input type="number" name="guests" placeholder="e.g. 50" />
 
-              <div class="field">
-                <label for="guests">Guests</label>
-                <input type="number" id="guests" name="guests" min="1" placeholder="e.g. 50">
-              </div>
+  <label>Budget (USD)</label>
+  <input type="text" name="budget" placeholder="e.g. 8–12k" />
 
-              <div class="field">
-                <label for="budget">Budget (USD)</label>
-                <input type="text" id="budget" name="budget" placeholder="e.g. 8–12k">
-              </div>
+  <label>Venue (if any)</label>
+  <input type="text" name="venue" placeholder="Rooftop, loft, gallery, etc." />
 
-              <div class="field full">
-                <label for="venue">Venue (if any)</label>
-                <input type="text" id="venue" name="venue" placeholder="Rooftop, loft, gallery, etc.">
-              </div>
+  <label>Message*</label>
+  <textarea name="message" placeholder="Format, atmosphere, goals, special requests..." required></textarea>
 
-              <div class="field full">
-                <label for="message">Message*</label>
-                <textarea id="message" name="message" rows="6" placeholder="Format, atmosphere, goals, special requests…" required></textarea>
-              </div>
+  <!-- Redirect after submit -->
+  <input type="hidden" name="_redirect" value="https://thegathernyc.com/thankyou.html" />
+
+  <div class="form-buttons">
+    <button type="submit" class="send-btn">Send</button>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=thegatherconyc@gmail.com&su=Event%20Inquiry&body=Hi%20The%20Gather%20NYC,%20I%27d%20like%20to%20plan%20an%20event..." 
+       target="_blank" class="email-btn">Email us directly</a>
+  </div>
+</form>
+
 
               <!-- Honeypot -->
               <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
