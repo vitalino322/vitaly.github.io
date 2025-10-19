@@ -4,88 +4,127 @@
   <meta charset="utf-8" />
   <title>About Us — The Gather NYC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!-- Подключаем те же стили, что на главной -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    body { background: linear-gradient(180deg,#141414 0%,#1a1a1a 100%); color:#f5f5f5; }
+    .wrap { display:grid; gap:2rem; grid-template-columns: minmax(0,2fr) minmax(320px,1fr); align-items:start; }
+    .card {
+      background: rgba(18,18,18,.95);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius:.6rem; padding:1.5rem;
+      box-shadow:0 0 20px rgba(0,0,0,.35);
+    }
+    .card--side { background: rgba(28,28,28,.8); border:1px solid rgba(255,255,255,.06); }
+    h1,h2,h3 { margin-top:0 }
+    .accent { color:#fff2b2 }
+    .grid-2 { display:grid; gap:1rem; grid-template-columns: 1fr 1fr; }
+    .image-grid { display:grid; gap:1rem; grid-template-columns: repeat(3,1fr); }
+    .image-grid .image img { height:220px; object-fit:cover; border-radius:.4rem; }
+    .stat { display:flex; align-items:baseline; gap:.5rem; }
+    .stat b { font-size:1.6rem; color:#fff2b2 }
+    .list-dots li { color:#bcbcbc }
+    @media (max-width: 980px){
+      .wrap { grid-template-columns:1fr; }
+      .image-grid { grid-template-columns:1fr; }
+    }
+  </style>
 </head>
 <body class="is-preload">
-  
-  <section>
-  <h2>Our Events</h2>
-  <img src="images/event1.jpg" alt="Private rooftop dinner" width="400">
-  <img src="images/event2.jpg" alt="Corporate launch party" width="400">
-</section>
-
-
-  <!-- Wrapper (та же обёртка, что и в index.html) -->
   <div id="wrapper">
 
-    <!-- Header / Nav (можно скопировать из index.html, чтобы меню совпадало) -->
+    <!-- Header -->
     <header id="header">
       <a href="index.html" class="logo">The Gather NYC</a>
     </header>
 
+    <!-- Nav -->
     <nav id="nav">
       <ul class="links">
         <li><a href="index.html">Home</a></li>
         <li class="active"><a href="about.html">About Us</a></li>
-      </ul>
-      <ul class="icons">
-        <!-- Примеры иконок; поставь свои ссылки -->
-        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="mailto:hello@thegathernyc.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        <li><a href="contacts.html">Contacts</a></li>
       </ul>
     </nav>
 
     <!-- Main -->
     <div id="main">
-
       <section class="post">
         <header class="major">
-          <h1>About Us</h1>
-          <p>NYC-based event collective. From private rooftops to brand activations — we design nights people remember.</p>
+          <h1 class="accent">About Us</h1>
+          <p style="color:#bdbdbd;">Мы создаём атмосферные события в Нью-Йорке: от камерных ужинов на руфах до смелых бренд-активаций. Атмосфера — сначала. Детали — всегда.</p>
         </header>
 
-        <h2>Our Philosophy</h2>
-        <p>Atmosphere first. Light, sound, pacing, texture — детали собирают эмоцию. Мы управляем ими, чтобы вечер ощущался естественным.</p>
+        <div class="wrap">
 
-        <h2>Moments We’ve Created</h2>
-        <div class="image-grid">
-          <span class="image fit"><img src="images/event1.jpg" alt="Rooftop dinner" /></span>
-          <span class="image fit"><img src="images/event2.jpg" alt="Private concert" /></span>
-          <span class="image fit"><img src="images/event3.jpg" alt="Brand launch" /></span>
-          <span class="image fit"><img src="images/event4.jpg" alt="Art show" /></span>
+          <!-- Основной контент -->
+          <div class="card">
+            <div class="grid-2" style="margin-bottom:1rem;">
+              <div>
+                <h2>Наш подход</h2>
+                <p>Событие — это история. Мы собираем её из света, звука, ритма, текстур и людей. Двигаемся от цели к эмоции: сначала смыслы и сценарий, затем продакшн и исполнение.</p>
+                <ul class="list-dots">
+                  <li>Концепция → сценарий → визуальный язык</li>
+                  <li>Full-stack продакшн: свет, звук, декор, кейтеринг, бар</li>
+                  <li>Релевантные площадки: руфы, лофты, галереи</li>
+                  <li>Кураторство таланта: DJ, live-музыка, перформансы</li>
+                </ul>
+              </div>
+              <div>
+                <h2>Почему мы</h2>
+                <div class="stat"><b>150+</b><span>мероприятий в NYC</span></div>
+                <div class="stat"><b>92%</b><span>клиентов возвращаются</span></div>
+                <div class="stat"><b>24h</b><span>первый продакшн-план</span></div>
+                <p style="color:#bcbcbc;">Мы держим баланс между эстетикой и операционной дисциплиной. Чёткие тайминги, прозрачный бюджет, спокойный бэк-офис.</p>
+              </div>
+            </div>
+
+            <h2>Moments we’ve created</h2>
+            <div class="image-grid">
+              <span class="image fit"><img src="images/about-1.jpg" alt="Rooftop dinner"></span>
+              <span class="image fit"><img src="images/about-2.jpg" alt="Brand launch"></span>
+              <span class="image fit"><img src="images/about-3.jpg" alt="Art show"></span>
+            </div>
+
+            <ul class="actions special" style="margin-top:1.2rem;">
+              <li><a href="contacts.html" class="button primary">Plan Your Event</a></li>
+            </ul>
+          </div>
+
+          <!-- Боковая колонка -->
+          <aside class="card card--side">
+            <h3 class="accent">Команда</h3>
+            <p style="color:#bcbcbc;">Продюсеры, технический руководитель, арт-директор, кураторы музыки и визуалов, координаторы площадок.</p>
+
+            <h3 class="accent">Фокус</h3>
+            <ul class="list-dots">
+              <li>Private dinners & rooftops (20–60)</li>
+              <li>Brand activations & launches (50–300)</li>
+              <li>Art shows / pop-ups / galleries</li>
+            </ul>
+
+            <h3 class="accent">География</h3>
+            <p style="color:#bcbcbc;">NYC, Brooklyn, LIC, Jersey City. Возможны выездные проекты.</p>
+
+            <div class="image fit" style="margin-top:1rem;">
+              <img src="images/about-side.jpg" alt="Team / backstage" style="border-radius:.4rem; object-fit:cover; height:220px;">
+            </div>
+          </aside>
+
         </div>
       </section>
-
     </div>
 
-    <!-- Footer (можно оставить как в index.html) -->
+    <!-- Footer -->
     <footer id="footer">
-      <section class="split contact">
-        <section>
-          <h3>Email</h3>
-          <p><a href="mailto:hello@thegathernyc.com">hello@thegathernyc.com</a></p>
-        </section>
-        <section>
-          <h3>Instagram</h3>
-          <p><a href="#">@thegathernyc</a></p>
-        </section>
-      </section>
+      <div id="copyright">
+        <ul><li>© 2025 The Gather NYC</li><li>Theme: HTML5 UP</li></ul>
+      </div>
     </footer>
-
-    <!-- Copyright -->
-    <div id="copyright">
-      <ul><li>© 2025 The Gather NYC</li><li>Theme: HTML5 UP</li></ul>
-    </div>
 
   </div>
 
-  <!-- Скрипты темы (как на главной) -->
   <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
   <script src="assets/js/browser.min.js"></script>
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
