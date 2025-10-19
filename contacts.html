@@ -8,16 +8,46 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   <style>
     /* Лёгкая полировка под лаконичный вид */
-    .contact-wrap { display:grid; grid-template-columns: 2fr 1fr; gap:2rem; }
-    .hint { color:#bdbdbd; margin:0 0 1rem 0; }
-    .group { border:1px solid rgba(255,255,255,.08); border-radius:.5rem; padding:1.25rem; background:rgba(255,255,255,.02); }
-    .group h3 { margin:0 0 .75rem 0; }
-    .fields .field { margin-bottom:.9rem; }
-    .fields .half { width:100%; }
-    .budget-row { display:grid; grid-template-columns: 1fr 1fr; gap:.75rem; }
-    .actions { margin-top:.6rem; }
-    .icons.small a { opacity:.9 }
-    @media (max-width: 980px){ .contact-wrap{ grid-template-columns: 1fr; } }
+  .contact-wrap{
+  display:grid;
+  grid-template-columns: minmax(0,2fr) minmax(320px,1fr);
+  gap:2rem;
+  align-items:start;
+}
+
+/* формовая колонка поверх и с непрозрачным фоном */
+.group--form{
+  position:relative;
+  z-index:2;
+  background: rgba(18,18,18,.9);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:.5rem;
+  padding:1.25rem;
+}
+
+/* инфо-колонка ниже по слою */
+.group--info{
+  position:relative;
+  z-index:1;
+  background: rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:.5rem;
+  padding:1.25rem;
+}
+
+/* поля — чуть плотнее фон, чтобы не «просвечивали» */
+.group--form .field input,
+.group--form .field textarea,
+.group--form .field select{
+  background: rgba(255,255,255,.06);
+}
+
+/* карта не вылезает из контейнера */
+.group--info iframe{ display:block; width:100%; height:220px; border:0; }
+@media (max-width: 980px){
+  .contact-wrap{ grid-template-columns: 1fr; }
+}
+
   </style>
 </head>
 <body class="is-preload">
@@ -97,7 +127,7 @@
 
                 <div class="field">
                   <label for="message">Message*</label>
-                  <textarea name="message" id="message" rows="6" placeholder="Формат, атмосфера, задачи (бренд/частное), спец.пожелания…" required></textarea>
+                  <textarea name="message" id="message" rows="6" placeholder="Format" required></textarea>
                 </div>
 
                 <!-- honeypot -->
@@ -178,5 +208,6 @@
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
+  
 </body>
 </html>
