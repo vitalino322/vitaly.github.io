@@ -4,337 +4,206 @@
   <meta charset="utf-8" />
   <title>The Gather NYC — Event Design & Production</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
-    /* Базовая стабилизация */
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-img { max-width: 100%; height: auto; display: block; }
-
-/* HERO как фоновый блок — безопасно для потока разметки */
-.hero{
-  position: relative;
-  min-height: 78vh;                 /* без 100vh - меньше «скачков» на мобилках */
-  display: flex; align-items: center; justify-content: center;
-  text-align: center;
-  padding: 2.6rem 1rem 3rem;
-  background: #111 center/cover no-repeat url("images/hero.jpg");  /* <-- твой файл */
-  overflow: hidden;                 /* чтобы маска не влияла на поток */
-}
-
-/* тёмная маска поверх фото — не кликабельна */
-.hero::before{
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,.28), rgba(0,0,0,.62));
-  pointer-events: none;
-}
-
-/* контент поверх */
-.hero-inner{
-  position: relative; z-index: 1;
-  max-width: 860px; margin-inline: auto;
-}
-
-.hero h1{
-  color: #fff2b2; margin: 0 0 .5rem; 
-  font-size: clamp(2rem, 4.2vw, 2.8rem); /* адаптивный размер */
-}
-.hero p{
-  color: #ddd; max-width: 680px; margin: .2rem auto 1.1rem;
-}
-
-/* полупрозрачные кнопки + заметные отступы */
-.actions.special{
-  display: flex; justify-content: center; flex-wrap: wrap;
-  gap: 1.1rem; margin-top: .6rem;
-}
-.button{
-  padding: .85rem 1.4rem; border-radius: .45rem;
-  border: 1px solid rgba(255,255,255,.28);
-  background: rgba(255,255,255,.10); color: #fff;
-  font-weight: 600; text-decoration: none;
-  backdrop-filter: blur(4px);
-  transition: background .25s, transform .2s, border-color .25s;
-}
-.button.primary{
-  background: rgba(228,184,77,.16); color: #fff2b2; border-color: rgba(228,184,77,.45);
-}
-.button:hover{ background: rgba(255,255,255,.22); transform: translateY(-2px); border-color: rgba(255,255,255,.5); }
-.button.primary:hover{ background: rgba(228,184,77,.32); border-color: rgba(228,184,77,.7); }
-
-/* чтобы основной контент точно не «прятался» под hero */
-#main { position: relative; z-index: 2; }
-
-/* адаптивные подправки */
-@media (max-width: 768px){
-  .hero { min-height: 70vh; padding: 2rem 1rem 2.4rem; }
-}
-
-    /* -------- Base -------- */
-    :root{
+    :root {
       --gold: #e4b84d;
       --text: #f5f5f5;
       --muted: #cfcfcf;
-      --panel: rgba(255,255,255,.02);
-      --panel-bd: rgba(255,255,255,.08);
     }
-    html,body{height:100%}
-    body{margin:0;background:linear-gradient(180deg,#141414 0%,#1a1a1a 100%);color:var(--text)}
-    img{max-width:100%;height:auto;display:block}
+    html, body { margin: 0; padding: 0; background: #0f0f0f; color: var(--text); font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
 
-    /* -------- Header / Nav -------- */
-    #header{ text-align:center; }
-    #header .logo{ font-weight:600; }
-    #nav{ text-align:center; padding:.8rem 0; }
-    #nav .links{ display:inline-flex; gap:1.8rem; list-style:none; margin:0; padding:0; }
-    #nav .icons{ display:inline-flex; gap:1rem; margin-top:.6rem; }
-    .nav-link{ position:relative; color:var(--text); text-decoration:none; transition:color .3s; }
-    .nav-link::after{ content:""; position:absolute; bottom:-3px; left:0; width:0; height:1px; background:var(--gold); transition:width .3s; }
-    .nav-link:hover{ color:#fff2b2; }
-    .nav-link:hover::after{ width:100%; }
-
-    /* -------- Reveal (не ломает макет) -------- */
-    .reveal{ opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .9s ease; will-change:opacity,transform; }
-    .reveal.show{ opacity:1; transform:translateY(0); }
-
-  <!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <h1>Creating Unforgettable Events</h1>
-    <p>From concept to experience — we design and produce bespoke moments across New York.</p>
-
-    <div class="actions special">
-      <a href="#whatwedo" class="button">What We Do</a>
-      <a href="contacts.html" class="button primary">Book an Event</a>
-    </div>
-  </div>
-</section>
-
-    /* -------- Кнопки (полупрозрачные) -------- */
-    .actions.special{
-      display:flex; justify-content:center; flex-wrap:wrap;
-      gap:1.1rem; margin-top:.6rem;
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: url("images/hero.jpg") center/cover no-repeat;
+      color: white;
     }
-    .button{
-      padding:.85rem 1.4rem; border-radius:.45rem;
-      border:1px solid rgba(255,255,255,.28);
-      background:rgba(255,255,255,.10); color:#fff;
-      font-weight:600; text-decoration:none; backdrop-filter:blur(4px);
-      transition:background .25s, transform .2s, border-color .25s;
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
     }
-    .button.primary{ background:rgba(228,184,77,.16); color:#fff2b2; border-color:rgba(228,184,77,.45); }
-    .button:hover{ background:rgba(255,255,255,.22); transform:translateY(-2px); border-color:rgba(255,255,255,.5); }
-    .button.primary:hover{ background:rgba(228,184,77,.32); border-color:rgba(228,184,77,.7); }
-
-    /* -------- Основной контейнер -------- */
-    #main{ padding:2.2rem 1rem 2.8rem; }
-    .post{ max-width:1200px; margin:0 auto 2.2rem; }
-    .major{ text-align:center; margin-bottom:1.2rem; }
-    .major h2{ margin:.2rem 0 .35rem; }
-    .major p{ color:var(--muted); margin:0 }
-
-    /* -------- What We Do -------- */
-    #whatwedo .pillars{
-      display:grid; gap:1.2rem; grid-template-columns:repeat(3,1fr);
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 2rem;
     }
-    #whatwedo .pillar{
-      background:var(--panel); border:1px solid var(--panel-bd);
-      border-radius:.7rem; padding:1.25rem;
+    .hero h1 {
+      font-size: 2.8rem;
+      color: #fff2b2;
+      margin-bottom: 1rem;
     }
-    #whatwedo .pillar h3{ margin:.1rem 0 .5rem; }
-    #whatwedo .pillar p{ color:#cfcfcf; margin:0; }
-    @media (max-width:980px){ #whatwedo .pillars{ grid-template-columns:1fr; } }
-
-    /* -------- Галерея -------- */
-    .work-grid{
-      display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    .hero p {
+      font-size: 1.1rem;
+      color: #ddd;
+      margin-bottom: 2rem;
     }
-    .work-grid img{
-      width:100%; height:220px; object-fit:cover; border-radius:10px; cursor:pointer;
-      opacity:0; transform:translateY(16px); transition:opacity .7s, transform .9s;
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
     }
-    .work-grid.show img{ opacity:1; transform:translateY(0); }
-
-    /* Lightbox */
-    .lightbox{ position:fixed; inset:0; background:rgba(0,0,0,.85); display:none; justify-content:center; align-items:center; z-index:9999; }
-    .lightbox img{ max-width:90vw; max-height:80vh; border-radius:6px }
-    .lightbox .close{ position:absolute; top:20px; right:24px; font-size:2rem; color:#fff; cursor:pointer }
-
-    /* -------- Финальный CTA -------- */
-    .cta-final{
-      text-align:center; margin:2.6rem auto 0; padding:2rem;
-      max-width:1100px; border:1px solid rgba(255,255,255,.1);
-      border-radius:.8rem; background:linear-gradient(180deg,rgba(228,184,77,.07),rgba(228,184,77,.03));
+    .button {
+      padding: 0.9rem 1.6rem;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 6px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
     }
-    .cta-final p{ color:var(--muted) }
+    .button:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+    .button.primary {
+      background: rgba(228,184,77,0.2);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .button.primary:hover {
+      background: rgba(228,184,77,0.35);
+    }
 
-    /* -------- Footer -------- */
-    .minimal-footer{ text-align:center; padding:1.5rem 0; font-size:.85rem; opacity:.65; }
-    .minimal-footer ul{ list-style:none; padding:0; margin:0; display:inline-flex; gap:1.2rem; color:#ccc; }
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 4rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    p.center {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
 
-    /* -------- Адаптив HERO заголовка -------- */
-    @media (max-width:768px){
-      .hero{ padding:2rem 1rem 2.4rem; min-height:70vh; }
-      .hero h1{ font-size:2.2rem; }
-      .actions.special{ gap:.9rem; }
+    /* ===== CONTACT FORM ===== */
+    #contact {
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 4rem 1.5rem;
+      margin-top: 2rem;
+    }
+    form {
+      display: grid;
+      gap: 1rem;
+      max-width: 700px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 5px;
+      background: rgba(255,255,255,0.05);
+      color: white;
+      resize: vertical;
+    }
+    textarea { height: 120px; }
+    button {
+      background: rgba(228,184,77,0.25);
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 5px;
+      padding: 0.8rem 1.4rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background: rgba(228,184,77,0.45);
+      color: white;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #999;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
     }
   </style>
 </head>
 
-<body class="is-preload">
-  <div id="wrapper">
+<body>
 
-    <!-- Header -->
-    <header id="header"><a href="index.html" class="logo">The Gather NYC</a></header>
-
-    <!-- Nav -->
-    <nav id="nav">
-      <ul class="links">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About Us</a></li>
-        <li><a href="contacts.html" class="nav-link">Contacts</a></li>
-      </ul>
-      <br>
-      <ul class="icons">
-        <li><a href="https://instagram.com/thegathernyc" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-        <li><a href="mailto:thegatherconyc@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-      </ul>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero">
-      <img src="images/hero.jpg" alt="Event" class="hero-bg" loading="eager">
-      <div class="hero-inner reveal show">
-        <h1>Creating Unforgettable Events</h1>
-        <p>From concept to experience — we design and produce bespoke moments across New York.</p>
-
-        <!-- Кнопки, как просил -->
-        <div class="actions special">
-          <a href="#whatwedo" class="button">What We Do</a>
-          <a href="contacts.html" class="button primary">Book an Event</a>
-        </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Creating Unforgettable Events</h1>
+      <p>From concept to experience — we design and produce bespoke moments across New York.</p>
+      <div class="actions">
+        <a href="#whatwedo" class="button">What We Do</a>
+        <a href="#contact" class="button primary">Book an Event</a>
       </div>
-    </section>
-
-    <!-- Main -->
-    <div id="main">
-
-      <!-- What We Do -->
-      <section id="whatwedo" class="post">
-        <header class="major reveal">
-          <h2>What We Do</h2>
-          <p>Design • Production • Talent • Venues</p>
-        </header>
-
-        <div class="pillars">
-          <div class="pillar reveal">
-            <h3>Concept → Experience</h3>
-            <p>From idea to narrative and visual language — we build emotion around your vision.</p>
-          </div>
-          <div class="pillar reveal">
-            <h3>Full-Stack Production</h3>
-            <p>Lighting, sound, décor, catering, bar, photo & video. Precision meets creativity.</p>
-          </div>
-          <div class="pillar reveal">
-            <h3>Venues & Talent</h3>
-            <p>Rooftops, lofts, galleries. Musicians, DJs, performers — all aligned with the atmosphere.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Gallery -->
-      <section class="post">
-        <header class="major reveal">
-          <h2>Recent Work</h2>
-          <p>A quick glimpse into our vibe</p>
-        </header>
-
-        <div class="work-grid reveal">
-          <img src="images/grid1.jpeg" alt="Rooftop dinner">
-          <img src="images/grid2.jpeg" alt="Launch party">
-          <img src="images/grid3.jpeg" alt="Art show">
-          <img src="images/grid4.jpeg" alt="Backstage
-        </div>
-
-        <!-- Lightbox -->
-        <div class="lightbox" id="lb"><img alt=""><span class="close">×</span></div>
-      </section>
-
-      <!-- Testimonials -->
-      <section class="post">
-        <header class="major reveal"><h2>What Clients Say</h2></header>
-        <div class="testi reveal">
-          <blockquote class="show">“Flawless flow, beautiful atmosphere. Our guests still talk about it.” <span>— Brand lead, SoHo</span></blockquote>
-          <blockquote>“They made the venue feel like us. Zero stress, just magic.” <span>— Private client, UES</span></blockquote>
-          <blockquote>“On budget, on time, beyond expectations.” <span>— Gallery director, Chelsea</span></blockquote>
-        </div>
-      </section>
-
-      <!-- Final CTA -->
-      <section class="cta-final reveal">
-        <h2>Ready to plan your event?</h2>
-        <p>Tell us the date, mood, guests — we’ll handle the rest.</p>
-        <div class="actions special">
-          <a href="contacts.html" class="button primary">Start Here</a>
-          <a href="mailto:thegatherconyc@gmail.com" class="button">Email Us</a>
-        </div>
-      </section>
     </div>
+  </section>
 
-    <!-- Footer -->
-    <footer id="footer" class="minimal-footer">
-      <ul><li>© 2025 The Gather NYC</li><li>Theme: HTML5 UP</li></ul>
-    </footer>
-  </div>
+  <!-- What We Do -->
+  <section id="whatwedo">
+    <h2>What We Do</h2>
+    <p class="center">Design • Production • Talent • Venues</p>
+    <p>From idea to execution — lighting, sound, décor, catering, bar, photo & video. Rooftops, lofts, galleries, musicians, DJs — all aligned with the atmosphere you imagine.</p>
+  </section>
 
-  <!-- Scripts -->
-  <script>
-    // Мягкий reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const revealOnScroll = () => {
-      for (let el of reveals) {
-        const r = el.getBoundingClientRect();
-        if (r.top <= innerHeight - 100) el.classList.add('show');
-      }
-    };
-    addEventListener('scroll', revealOnScroll);
-    addEventListener('load', revealOnScroll);
+  <!-- Contact Section (Formspree) -->
+  <section id="contact">
+    <h2>Plan Your Event</h2>
+    <p class="center">Describe your vision, and we’ll get back to you within 24 hours.</p>
 
-    // Smooth scroll по якорю "What We Do"
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href').slice(1);
-        const t = document.getElementById(id);
-        if (t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
-      });
-    });
+    <form action="https://formspree.io/f/xwprzvla" method="POST">
+      <label>Your Name:</label>
+      <input type="text" name="name" placeholder="Full name" required>
 
-    // Lightbox
-    const grid = document.querySelector('.work-grid');
-    const lb = document.getElementById('lb');
-    if (grid && lb) {
-      const imgTag = lb.querySelector('img');
-      grid.addEventListener('click', e=>{
-        if(e.target.tagName==='IMG'){ imgTag.src = e.target.src; lb.style.display='flex'; }
-      });
-      lb.addEventListener('click', e=>{
-        if(e.target===lb || e.target.classList.contains('close')) lb.style.display='none';
-      });
-      addEventListener('keydown', e=>{ if(e.key==='Escape') lb.style.display='none'; });
-    }
-  </script>
+      <label>Your Email:</label>
+      <input type="email" name="email" placeholder="email@example.com" required>
 
-  <!-- HTML5 UP base scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
+      <label>Message:</label>
+      <textarea name="message" placeholder="Event details, ideas, preferred dates..."></textarea>
+
+      <button type="submit">Send Inquiry</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 The Gather NYC — Theme: HTML5 UP
+  </footer>
+
 </body>
 </html>
+
+
 
 
 
