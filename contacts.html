@@ -119,23 +119,42 @@
 <!-- Nav -->
 <nav id="nav" style="text-align:center; padding:0.8rem 0;">
   <ul class="links" style="display:inline-flex; gap:1.8rem; list-style:none; margin:0; padding:0;">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    <li><a href="about.html" class="nav-link">About Us</a></li>
   </ul>
   <br>
   <ul class="icons" style="display:inline-flex; gap:1rem; margin-top:0.6rem;">
-    <li>
-      <a href="https://instagram.com/thegathernyc" target="_blank" class="icon brands fa-instagram" style="opacity:0.9;">
-        <span class="label">Instagram</span>
-      </a>
-    </li>
-    <li>
-      <a href="mailto:hello@thegathernyc.com" class="icon solid fa-envelope" style="opacity:0.9;">
-        <span class="label">Email</span>
-      </a>
-    </li>
+    <li><a href="https://instagram.com/thegathernyc" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+    <li><a href="mailto:hello@thegathernyc.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
   </ul>
 </nav>
+
+<style>
+  /* Hover underline for nav links */
+  .nav-link {
+    position: relative;
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #e4b84d;
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  .nav-link:hover {
+    color: #fff2b2;
+  }
+</style>
+
 
 
 
