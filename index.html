@@ -1,59 +1,158 @@
 <!DOCTYPE HTML>
-<!--
-	CREATING MEMORIES
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>THE GATHER NYC</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
-		
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>The Gather NYC — Creating Memories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    /* Лёгкая подстройка под лаконичный вид */
+    .hero {
+      position: relative;
+      background: url('images/hero.jpg') center/cover no-repeat;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.55));
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      max-width: 820px; padding: 2rem;
+    }
+    .hero h1 { color:#fff2b2; margin-bottom:.3em; }
+    .hero p { color:#e9e9e9; opacity:.95; }
 
-		<!-- Header -->
-			<a href="about.html">About Us</a>
-		    <a href="contacts.html">Contacts</a>
-			<header id="header">
-				<h1>CREATING MEMORIES</h1>
-				<p><br /> Book
-				your next big event with <a href="http://html5up.net">THE GATHER NYC</a></p>
-			</header>
+    .pillars { display:grid; gap:1.2rem; grid-template-columns: repeat(3,1fr); }
+    .pillar { padding:1.2rem; border:1px solid rgba(255,255,255,.08); border-radius:.5rem; background: rgba(255,255,255,.02); }
+    .pillar h3 { margin:0 0 .4rem 0; }
+    .pillar p { margin:0; color:#bdbdbd; }
 
-		<!-- Signup Form -->
-			<form id="signup-form" method="post" action="#">
-				<input type="email" name="email" id="email" placeholder="Email Address" />
-				<input type="submit" value="Sign Up" />
-			</form>
+    .image-grid { display:grid; gap:1rem; grid-template-columns: repeat(3,1fr); margin-top:1.2rem; }
+    .image-grid .image img { height:220px; object-fit:cover; }
 
-		<section>
-  <h2>Our Events</h2>
-  <img src="images/event1.jpeg" alt="Private rooftop dinner" width="400">
-  <img src="images/event2.jpeg" alt="Corporate launch party" width="400">
-</section>
+    @media (max-width: 980px){
+      .pillars, .image-grid { grid-template-columns: 1fr; }
+      .image-grid .image img { height:240px; }
+      .hero { min-height: 56vh; }
+    }
+  </style>
+</head>
+<body class="is-preload">
+  <div id="wrapper">
 
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo">The Gather NYC</a>
+    </header>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; Untitled.</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</footer>
+    <!-- Nav -->
+    <nav id="nav">
+      <ul class="links">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+      </ul>
+      <ul class="icons">
+        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="mailto:hello@thegathernyc.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+      </ul>
+    </nav>
 
-		<!-- Scripts -->
-			<script src="assets/js/main.js"></script>
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-inner">
+        <h1>Creating Memories</h1>
+        <p>Immersive events across New York — from intimate dinners to bold brand activations. Atmosphere first. Details always.</p>
+        <ul class="actions special">
+          <li><a href="contacts.html" class="button primary">Plan Your Event</a></li>
+        </ul>
+      </div>
+    </div>
 
-	</body>
+    <!-- Main -->
+    <div id="main">
 
+      <!-- Pillars -->
+      <section class="post">
+        <header class="major">
+          <h2>What We Do</h2>
+          <p>Design • Production • Talent • Venues</p>
+        </header>
+
+        <div class="pillars">
+          <div class="pillar">
+            <h3>Concept → Experience</h3>
+            <p>От идеи до сценария и визуального языка. Мы собираем эмоцию вокруг вашей цели.</p>
+          </div>
+          <div class="pillar">
+            <h3>Full-Stack Production</h3>
+            <p>Свет, звук, декор, кейтеринг, бар, фото/видео. Слаженная команда и тайминг.</p>
+          </div>
+          <div class="pillar">
+            <h3>Venues & Talent</h3>
+            <p>Руфы, лофты, галереи. Музыканты, диджеи, перформеры — под нужную атмосферу.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mini Gallery -->
+      <section class="post">
+        <header class="major">
+          <h2>Recent Moments</h2>
+          <p>Небольшая выборка настроения</p>
+        </header>
+        <div class="image-grid">
+          <span class="image fit"><img src="images/grid1.jpg" alt="Rooftop dinner"></span>
+          <span class="image fit"><img src="images/grid2.jpg" alt="Launch party"></span>
+          <span class="image fit"><img src="images/grid3.jpg" alt="Art show"></span>
+        </div>
+        <ul class="actions special" style="margin-top:1.2rem;">
+          <li><a href="about.html" class="button">More About Us</a></li>
+          <li><a href="contacts.html" class="button primary">Get a Quote</a></li>
+        </ul>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <section class="split contact">
+        <section>
+          <h3>Email</h3>
+          <p><a href="mailto:hello@thegathernyc.com">hello@thegathernyc.com</a></p>
+        </section>
+        <section>
+          <h3>Instagram</h3>
+          <p><a href="#">@thegathernyc</a></p>
+        </section>
+        <section>
+          <h3>Based in</h3>
+          <p>New York, NY</p>
+        </section>
+      </section>
+    </footer>
+
+    <div id="copyright">
+      <ul><li>© 2025 The Gather NYC</li><li>Theme: HTML5 UP</li></ul>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
 </html>
 
 
