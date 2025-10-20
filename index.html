@@ -182,6 +182,21 @@
     /* ====== Footer ====== */
     .minimal-footer{text-align:center;padding:1.5rem 0;font-size:.85rem;opacity:.65}
     .minimal-footer ul{list-style:none;padding:0;margin:0;display:inline-flex;gap:1.2rem;color:#ccc}
+    html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#wrapper {
+  flex: 1; /* основной контент растягивается */
+}
+
+footer {
+  margin-top: auto; /* футер прижимается вниз */
+}
+
 
     /* Мобилки */
     @media (max-width:768px){
@@ -322,6 +337,7 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
 
