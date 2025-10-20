@@ -4,6 +4,7 @@
 	Eventually by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
 */
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -885,3 +886,33 @@ button,
       left: auto;
       margin: 1em 0 0 0;
       position: relative; } }
+
+/* --- стабильный отступ сверху для всей страницы контактов --- */
+:root {
+  /* регулируемый запас под шапку/пространство; можно подстроить цифры */
+  --page-top-space: clamp(64px, 9vh, 128px);
+}
+
+/* Базовая стабилизация прокрутки/масштаба */
+html, body {
+  margin: 0;
+  min-height: 100%;
+  height: auto;
+  overflow-x: hidden;       /* на всякий случай, чтобы не появлялся горизонтальный скролл */
+  -webkit-text-size-adjust: 100%; /* чтобы iOS не перескалировал шрифты */
+}
+
+/* Отступ добавляем на оболочку, а не на body — так надёжнее */
+#wrapper {
+  padding-top: var(--page-top-space);
+}
+
+/* Если на странице были "reveal"-анимации — отключим перемещения,
+   чтобы они не влияли на реальную высоту (частая причина "уехавшего" верха) */
+.reveal { opacity: 1 !important; transform: none !important; }
+
+/* Мобилки: чуть больше воздуха сверху, если нужно */
+@media (max-width: 768px) {
+  :root { --page-top-space: clamp(72px, 12vh, 144px); }
+}
+
