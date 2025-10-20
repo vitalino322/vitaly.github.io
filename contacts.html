@@ -10,6 +10,28 @@
   <style>
     body { background:linear-gradient(180deg,#141414 0%,#1a1a1a 100%); color:#f5f5f5; margin:0; }
 
+    /* отступ для всей страницы */
+body {
+  padding-top: 6vh; /* немного воздуха сверху */
+}
+
+/* если у тебя форма обёрнута в section или div */
+.contact-section {
+  margin-top: 3vh;
+}
+
+/* если форма имеет id (например #contact или #form) */
+#contact, #form {
+  margin-top: 4vh;
+}
+
+/* адаптивное смягчение для телефонов */
+@media (max-width: 768px) {
+  body {
+    padding-top: 10vh; /* чуть больше, чтобы не прижимало к верху */
+  }
+}
+
 
     /* Header / Nav */
     #header { text-align:center; }
