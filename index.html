@@ -39,21 +39,31 @@
 .hero {
   position: relative;
   width: 100%;
-  min-height: 90vh; /* немного выше для масштабируемости */
+  min-height: 90vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
   overflow: hidden;
-  background: radial-gradient(
-      circle at center,
-      rgba(0, 0, 0, 0.1) 0%,
-      rgba(0, 0, 0, 0.25) 40%,
-      rgba(0, 0, 0, 0.5) 100%
-    ),
-    url("images/hero1.jpg") center center / cover no-repeat;
-  background-attachment: fixed; /* лёгкий параллакс эффект */
+
+  /* фон */
+  background:
+    radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.25) 40%, rgba(0, 0, 0, 0.5) 100%),
+    url("images/hero.jpg") center center / cover no-repeat;
+
+  background-attachment: fixed;
+  padding-top: 8vh;  /* добавляем воздух сверху */
+  padding-bottom: 5vh; /* немного баланса снизу */
 }
+
+    @media (max-width: 768px) {
+  .hero {
+    padding-top: 12vh; /* на телефонах больше воздуха */
+    background-attachment: scroll; /* убирает рывки при прокрутке */
+  }
+}
+
 
 /* мягкое затемнение по краям */
 .hero::before {
@@ -312,6 +322,7 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
 
