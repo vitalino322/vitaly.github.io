@@ -1129,6 +1129,121 @@ footer {
   color: var(--muted);
   border-top: 1px solid rgba(0,0,0,0.05);
 }
+/* === Theme System: Beige & Dark Gold === */
+
+/* ---------- BASE (shared styles) ---------- */
+:root {
+  --gold: #c2a25f;
+  --transition: all 0.4s ease;
+}
+
+body {
+  margin: 0;
+  transition: var(--transition);
+}
+
+/* ---------- BEIGE THEME ---------- */
+body.beige {
+  --bg: #f4f1eb;
+  --text: #3b342c;
+  --muted: #6a6358;
+  --surface: #fff9f3;
+  --border: rgba(0,0,0,0.05);
+}
+
+body.beige {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body.beige header,
+body.beige nav,
+body.beige section,
+body.beige footer {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+body.beige a,
+body.beige .button {
+  color: var(--text);
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
+  transition: var(--transition);
+}
+
+body.beige .button.primary {
+  background: var(--gold);
+  color: #fff;
+  border: 1px solid var(--gold);
+}
+
+body.beige .button:hover,
+body.beige .button.primary:hover {
+  background: rgba(0,0,0,0.15);
+  color: #000;
+}
+
+body.beige .hero {
+  background:
+    radial-gradient(circle at center, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.9) 80%),
+    url("../../images/hero.jpg") center/cover no-repeat;
+  color: var(--text);
+  text-shadow: none;
+}
+
+body.beige footer {
+  background: #f3ede5;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- DARK GOLD THEME ---------- */
+body.dark {
+  --bg: #0f0f0f;
+  --text: #f5f5f5;
+  --muted: #cfcfcf;
+  --surface: #1a1a1a;
+  --border: rgba(255,255,255,0.1);
+}
+
+body.dark {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body.dark header,
+body.dark nav,
+body.dark section,
+body.dark footer {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+body.dark a,
+body.dark .button {
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: var(--transition);
+}
+
+body.dark .button.primary {
+  background: rgba(228,184,77,0.25);
+  border-color: rgba(228,184,77,0.6);
+  color: #fff2b2;
+}
+
+body.dark .button:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+body.dark .hero {
+  background:
+    radial-gradient(circle at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.65) 100%),
+    url("../../images/hero.jpg") center/
+
 
 
 
