@@ -1054,5 +1054,26 @@ input[type="reset"] {
 @media (max-width: 768px){
   .hero{ min-height: 64svh; }
 }
+/* === FOOTER FIX (contacts only) === */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.9);
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  padding: 0.8rem 0;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+}
+
+/* чтобы форма и контент не упирались в него */
+body {
+  padding-bottom: 60px;
+}
+
 
 
