@@ -1830,6 +1830,41 @@ footer {
 body {
   padding-bottom: 0 !important;
 }
+/* === Nav button alignment fix === */
+#nav .links a,
+nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08);
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1.2;
+  transition: all 0.25s ease;
+  min-width: 100px; /* можно убрать, если не нужен равный размер */
+}
+
+#nav .links a:hover,
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: #e4b84d;
+  transform: translateY(-1px);
+}
+
+#nav .links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 
 
 
