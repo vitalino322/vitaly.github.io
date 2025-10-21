@@ -1458,5 +1458,336 @@ input[type="reset"] {
   .hero{ min-height: 64svh; }
 }
 
+html, body {
+  min-height: 100%;
+  height: auto;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+#wrapper { flex: 1; display: flex; flex-direction: column; }
+main, #main { flex: 1; }
+footer { margin-top: auto; }
+
+/* =========================================================
+   The Gather NYC — Stable Layout & Styling
+   ========================================================= */
+
+/* --- Global Reset & Layout Stability --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background: #0f0f0f;
+  color: #f5f5f5;
+  font-family: "Inter", Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+#wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+#main, main {
+  flex: 1;
+}
+
+/* --- Header & Navigation --- */
+#header {
+  background: rgba(15,15,15,0.95);
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem 0;
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+#header .logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e4b84d;
+  text-decoration: none;
+}
+
+#nav {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+#nav .links {
+  list-style: none;
+  display: inline-flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#nav a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color .3s ease;
+}
+
+#nav a:hover {
+  color: #e4b84d;
+}
+
+#nav .icons {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.4rem;
+  margin-top: .5rem;
+}
+
+#nav .icon {
+  color: #e4b84d;
+  font-size: 1.2rem;
+  transition: opacity .3s;
+}
+
+#nav .icon:hover {
+  opacity: .8;
+}
+
+/* --- Hero Section --- */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: 70svh;
+  background:
+    radial-gradient(circle at center, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.65) 100%),
+    url("../../images/hero.jpg") center/cover no-repeat;
+  background-attachment: scroll;
+  padding: clamp(40px, 6vw, 80px) 1rem;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,.6);
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  color: #fff2b2;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: #ddd;
+  max-width: 650px;
+  margin: 0 auto 1.6rem;
+}
+
+/* --- Buttons --- */
+.actions.special {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.button,
+button,
+input[type=submit],
+input[type=button],
+input[type=reset] {
+  padding: .9rem 1.6rem;
+  border-radius: 6px;
+  background: rgba(255,255,255,.1);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.3);
+  font-weight: 600;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+  transition: background .25s, transform .2s, border-color .25s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: rgba(255,255,255,.2);
+  transform: translateY(-2px);
+}
+
+.button.primary {
+  background: rgba(228,184,77,.25);
+  border-color: rgba(228,184,77,.6);
+  color: #fff2b2;
+}
+
+.button.primary:hover {
+  background: rgba(228,184,77,.4);
+}
+
+/* --- Section General --- */
+section.post {
+  max-width: 1200px;
+  margin: 0 auto 2.2rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+section.post h2 {
+  color: #e4b84d;
+  margin-bottom: 1rem;
+}
+
+section.post p {
+  color: #cfcfcf;
+}
+
+/* --- Pillar / What We Do --- */
+.pillars {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 1.5rem;
+}
+
+.pillar {
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: #ddd;
+}
+
+/* --- Gallery --- */
+.work-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.work-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity .3s ease;
+}
+
+.work-grid img:hover {
+  opacity: 0.85;
+}
+
+/* --- Lightbox --- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 6px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* --- CTA --- */
+.cta-final {
+  text-align: center;
+  margin: 2.6rem auto 0;
+  padding: 2rem;
+  max-width: 1100px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: .8rem;
+  background: linear-gradient(180deg,rgba(228,184,77,.07),rgba(228,184,77,.03));
+}
+
+.cta-final p {
+  color: #cfcfcf;
+}
+
+/* --- Footer --- */
+footer, #footer {
+  position: static !important;
+  width: 100%;
+  margin-top: auto;
+  text-align: center;
+  padding: 1.2rem 0;
+  font-size: .9rem;
+  color: rgba(255,255,255,0.7);
+  background: rgba(20,20,20,0.9);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 1.2rem;
+}
+
+/* --- Contacts Footer (фикс только там) --- */
+body.contacts footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(20,20,20,.9);
+  color: rgba(255,255,255,.65);
+  padding: .8rem 0;
+  font-size: .85rem;
+  border-top: 1px solid rgba(255,255,255,.1);
+  backdrop-filter: blur(6px);
+}
+
+body.contacts {
+  padding-bottom: 64px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 64svh;
+    padding: 60px 1rem;
+  }
+
+  .work-grid img {
+    height: 180px;
+  }
+
+  #nav .links {
+    gap: 1rem;
+  }
+}
+
 
 
