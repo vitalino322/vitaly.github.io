@@ -1788,6 +1788,49 @@ body.contacts {
     gap: 1rem;
   }
 }
+/* === FIX: Prevent header from sticking & restore full scroll === */
+
+/* 1. Тело не фиксируем по высоте, убираем flex с html/body */
+html, body {
+  min-height: 100%;
+  height: auto !important;
+  display: block;
+  overflow-x: hidden;
+  background: #0f0f0f;
+  color: #f5f5f5;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Контейнер держит контент, не заставляем растягиваться */
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+/* 3. Футер должен быть обычным, не фиксированным */
+footer {
+  position: static !important;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  background: rgba(20,20,20,0.9);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 0.8rem 0;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+  margin-top: auto;
+}
+
+/* 4. Убираем нижний паддинг с body — больше не нужен */
+body {
+  padding-bottom: 0 !important;
+}
+
 
 
 
