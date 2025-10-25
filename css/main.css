@@ -1890,6 +1890,31 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
+/* === Align hero buttons perfectly centered === */
+.actions .button,
+.actions a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  line-height: 1;
+  min-height: 46px;
+  border-radius: 6px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px; /* чуть поднимает текст визуально в центр кнопки */
+}
+
+.actions .button.primary {
+  background: rgba(228,184,77,0.25);
+  border: 1px solid rgba(228,184,77,0.6);
+  color: #fff2b2;
+}
+
+.actions .button.primary:hover {
+  background: rgba(228,184,77,0.4);
+}
+
 
 
 
